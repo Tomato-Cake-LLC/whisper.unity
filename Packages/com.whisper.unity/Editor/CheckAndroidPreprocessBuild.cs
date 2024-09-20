@@ -13,7 +13,7 @@ public class CheckAndroidPreprocessBuild : IPreprocessBuildWithReport
         if (sum.platform != BuildTarget.Android)
             return;
 
-        var backend = PlayerSettings.GetScriptingBackend(BuildTargetGroup.Android);
+        var backend = PlayerSettings.GetScriptingBackend(NamedBuildTarget.Android);
         if (backend != ScriptingImplementation.IL2CPP)
         {
             throw new Exception($"Unsupported scripting backend {backend}! Whisper for Android only supports il2cpp. " +

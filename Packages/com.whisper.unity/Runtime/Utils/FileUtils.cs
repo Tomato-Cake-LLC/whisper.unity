@@ -58,7 +58,7 @@ namespace Whisper.Utils
         public static async Task<byte[]> ReadFileWebRequestAsync(string path)
         {
             var request = UnityWebRequest.Get(path);
-            request.SendWebRequest();
+            var _ = request.SendWebRequest();
 
             while (!request.isDone)
                 await Task.Yield();
